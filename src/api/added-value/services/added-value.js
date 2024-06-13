@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * test2 service
+ * added-value service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::test2.test2');
+module.exports = createCoreService('api::added-value.added-value');

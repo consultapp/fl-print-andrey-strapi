@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "czena_metra_pogonnogos",
+  "info": {
+    "singularName": "czena-metra-pogonnogo",
+    "pluralName": "czena-metra-pogonnogos",
+    "displayName": "Цена метра погонного",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "max": {
+      "type": "decimal",
+      "default": 0
+    },
+    "price": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "ndss",
+  "info": {
+    "singularName": "nds",
+    "pluralName": "ndss",
+    "displayName": "НДС",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "decimal",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "required": true
+    }
+  }
+}

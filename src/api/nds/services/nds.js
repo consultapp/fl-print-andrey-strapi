@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * test1 service
+ * nds service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::test1.test1');
+module.exports = createCoreService('api::nds.nds');

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "stoimost_perenosa_izobrazheniyas",
+  "info": {
+    "singularName": "stoimost-perenosa-izobrazheniya",
+    "pluralName": "stoimost-perenosa-izobrazheniyas",
+    "displayName": "Стоимость переноса изображения",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "decimal",
+      "default": 1,
+      "required": true,
+      "min": 0
+    }
+  }
+}

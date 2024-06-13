@@ -362,66 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiTest1Test1 extends Schema.CollectionType {
-  collectionName: "test1s";
-  info: {
-    singularName: "test1";
-    pluralName: "test1s";
-    displayName: "Test1";
-    description: "";
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    slug: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      "api::test1.test1",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      "api::test1.test1",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTest2Test2 extends Schema.SingleType {
-  collectionName: "test2s";
-  info: {
-    singularName: "test2";
-    pluralName: "test2s";
-    displayName: "Test2";
-    description: "";
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    slug: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      "api::test2.test2",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      "api::test2.test2",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: "files";
   info: {
@@ -848,6 +788,138 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAddedValueAddedValue extends Schema.SingleType {
+  collectionName: "added_values";
+  info: {
+    singularName: "added-value";
+    pluralName: "added-values";
+    displayName: "\u041D\u0430\u0446\u0435\u043D\u043A\u0430";
+    description: "";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    value: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::added-value.added-value",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::added-value.added-value",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCzenaMetraPogonnogoCzenaMetraPogonnogo
+  extends Schema.CollectionType {
+  collectionName: "czena_metra_pogonnogos";
+  info: {
+    singularName: "czena-metra-pogonnogo";
+    pluralName: "czena-metra-pogonnogos";
+    displayName: "\u0426\u0435\u043D\u0430 \u043C\u0435\u0442\u0440\u0430 \u043F\u043E\u0433\u043E\u043D\u043D\u043E\u0433\u043E";
+    description: "";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    max: Attribute.Decimal & Attribute.DefaultTo<0>;
+    price: Attribute.Decimal & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::czena-metra-pogonnogo.czena-metra-pogonnogo",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::czena-metra-pogonnogo.czena-metra-pogonnogo",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNdsNds extends Schema.SingleType {
+  collectionName: "ndss";
+  info: {
+    singularName: "nds";
+    pluralName: "ndss";
+    displayName: "\u041D\u0414\u0421";
+    description: "";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    value: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 100;
+        },
+        number
+      > &
+      Attribute.DefaultTo<20>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<"api::nds.nds", "oneToOne", "admin::user"> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<"api::nds.nds", "oneToOne", "admin::user"> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStoimostPerenosaIzobrazheniyaStoimostPerenosaIzobrazheniya
+  extends Schema.SingleType {
+  collectionName: "stoimost_perenosa_izobrazheniyas";
+  info: {
+    singularName: "stoimost-perenosa-izobrazheniya";
+    pluralName: "stoimost-perenosa-izobrazheniyas";
+    displayName: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u0430 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F";
+    description: "";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    value: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::stoimost-perenosa-izobrazheniya.stoimost-perenosa-izobrazheniya",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::stoimost-perenosa-izobrazheniya.stoimost-perenosa-izobrazheniya",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module "@strapi/types" {
   export module Shared {
     export interface ContentTypes {
@@ -858,8 +930,6 @@ declare module "@strapi/types" {
       "admin::api-token-permission": AdminApiTokenPermission;
       "admin::transfer-token": AdminTransferToken;
       "admin::transfer-token-permission": AdminTransferTokenPermission;
-      "api::test1.test1": ApiTest1Test1;
-      "api::test2.test2": ApiTest2Test2;
       "plugin::upload.file": PluginUploadFile;
       "plugin::upload.folder": PluginUploadFolder;
       "plugin::content-releases.release": PluginContentReleasesRelease;
@@ -868,6 +938,10 @@ declare module "@strapi/types" {
       "plugin::users-permissions.permission": PluginUsersPermissionsPermission;
       "plugin::users-permissions.role": PluginUsersPermissionsRole;
       "plugin::users-permissions.user": PluginUsersPermissionsUser;
+      "api::added-value.added-value": ApiAddedValueAddedValue;
+      "api::czena-metra-pogonnogo.czena-metra-pogonnogo": ApiCzenaMetraPogonnogoCzenaMetraPogonnogo;
+      "api::nds.nds": ApiNdsNds;
+      "api::stoimost-perenosa-izobrazheniya.stoimost-perenosa-izobrazheniya": ApiStoimostPerenosaIzobrazheniyaStoimostPerenosaIzobrazheniya;
     }
   }
 }
