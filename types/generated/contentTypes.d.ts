@@ -833,6 +833,7 @@ export interface ApiCzenaMetraPogonnogoCzenaMetraPogonnogo
   attributes: {
     max: Attribute.Decimal & Attribute.DefaultTo<0>;
     price: Attribute.Decimal & Attribute.DefaultTo<0>;
+    min: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
