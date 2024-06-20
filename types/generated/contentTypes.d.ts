@@ -833,7 +833,6 @@ export interface ApiCzenaMetraPogonnogoCzenaMetraPogonnogo
   attributes: {
     max: Attribute.Decimal & Attribute.DefaultTo<0>;
     price: Attribute.Decimal & Attribute.DefaultTo<0>;
-    min: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -844,6 +843,37 @@ export interface ApiCzenaMetraPogonnogoCzenaMetraPogonnogo
       Attribute.Private;
     updatedBy: Attribute.Relation<
       "api::czena-metra-pogonnogo.czena-metra-pogonnogo",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHistoryHistory extends Schema.CollectionType {
+  collectionName: "histories";
+  info: {
+    singularName: "history";
+    pluralName: "histories";
+    displayName: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    json: Attribute.JSON;
+    comment: Attribute.Text;
+    label: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::history.history",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::history.history",
       "oneToOne",
       "admin::user"
     > &
@@ -941,6 +971,7 @@ declare module "@strapi/types" {
       "plugin::users-permissions.user": PluginUsersPermissionsUser;
       "api::added-value.added-value": ApiAddedValueAddedValue;
       "api::czena-metra-pogonnogo.czena-metra-pogonnogo": ApiCzenaMetraPogonnogoCzenaMetraPogonnogo;
+      "api::history.history": ApiHistoryHistory;
       "api::nds.nds": ApiNdsNds;
       "api::stoimost-perenosa-izobrazheniya.stoimost-perenosa-izobrazheniya": ApiStoimostPerenosaIzobrazheniyaStoimostPerenosaIzobrazheniya;
     }

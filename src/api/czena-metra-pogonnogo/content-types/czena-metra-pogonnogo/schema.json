@@ -19,11 +19,6 @@
     "price": {
       "type": "decimal",
       "default": 0
-    },
-    "min": {
-      "type": "decimal",
-      "default": 0,
-      "required": true
     }
   }
 }

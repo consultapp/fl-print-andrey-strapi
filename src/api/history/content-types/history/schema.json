@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "histories",
+  "info": {
+    "singularName": "history",
+    "pluralName": "histories",
+    "displayName": "История"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "json": {
+      "type": "json"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}
