@@ -5,7 +5,8 @@
   "description": "A Strapi application",
   "license": "MIT",
   "author": {
-    "name": "A Strapi developer"
+    "name": "Egorov Dmitry",
+    "email": "info@consultapp.ru"
   },
   "scripts": {
     "build": "strapi build",

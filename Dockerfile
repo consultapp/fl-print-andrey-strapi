@@ -13,6 +13,9 @@ COPY . .
 
 ENV PORT=3000
 ENV NODE_ENV=production
+ENV DATABASE_CLIENT=sqlite
+ENV DATABASE_FILENAME=src/workBase.db
+
 
 RUN yarn build
 
