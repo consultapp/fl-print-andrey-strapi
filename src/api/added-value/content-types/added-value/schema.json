@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "added_values",
+  "info": {
+    "singularName": "added-value",
+    "pluralName": "added-values",
+    "displayName": "Наценка",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "decimal",
+      "default": 0,
+      "required": true
+    }
+  }
+}

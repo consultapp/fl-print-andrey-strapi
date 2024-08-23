@@ -1,0 +1,21 @@
+services:
+  frontend:
+    image: test7778/fl-print-andrey-vite
+    ports:
+      - "3034:3000"
+    environment:
+      - NODE_ENV=production
+      - VITE_STRAPI_URL=http://92.53.105.129:3035
+
+  backend:
+    image: test7778/fl-print-andrey-strapi
+    ports:
+      - "3035:3000"
+    volumes:
+      - strapi-data:/src/.base
+    environment:
+      - NODE_ENV=production
+      - DATABASE_FILENAME=.base/workBase.db
+
+volumes:
+  strapi-data:
