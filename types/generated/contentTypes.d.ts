@@ -881,6 +881,51 @@ export interface ApiHistoryHistory extends Schema.CollectionType {
   };
 }
 
+export interface ApiMetersIncreaseMetersIncrease extends Schema.CollectionType {
+  collectionName: "meters_increase_all";
+  info: {
+    singularName: "meters-increase";
+    pluralName: "meters-increase-all";
+    displayName: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u043C\u0435\u0442\u0440\u0430\u0436\u0430";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    maxMeters: Attribute.Integer &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    percent: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::meters-increase.meters-increase",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::meters-increase.meters-increase",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNdsNds extends Schema.SingleType {
   collectionName: "ndss";
   info: {
@@ -972,6 +1017,7 @@ declare module "@strapi/types" {
       "api::added-value.added-value": ApiAddedValueAddedValue;
       "api::czena-metra-pogonnogo.czena-metra-pogonnogo": ApiCzenaMetraPogonnogoCzenaMetraPogonnogo;
       "api::history.history": ApiHistoryHistory;
+      "api::meters-increase.meters-increase": ApiMetersIncreaseMetersIncrease;
       "api::nds.nds": ApiNdsNds;
       "api::stoimost-perenosa-izobrazheniya.stoimost-perenosa-izobrazheniya": ApiStoimostPerenosaIzobrazheniyaStoimostPerenosaIzobrazheniya;
     }

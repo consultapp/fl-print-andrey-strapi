@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meters_increase_all",
+  "info": {
+    "singularName": "meters-increase",
+    "pluralName": "meters-increase-all",
+    "displayName": "Увеличение метража"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "maxMeters": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 0
+    },
+    "percent": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    }
+  }
+}
