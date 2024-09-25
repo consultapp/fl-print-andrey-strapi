@@ -926,6 +926,40 @@ export interface ApiMetersIncreaseMetersIncrease extends Schema.CollectionType {
   };
 }
 
+export interface ApiMinimalnyeParmetryPerenosaMinimalnyeParmetryPerenosa
+  extends Schema.SingleType {
+  collectionName: "minimalnye_parmetry_perenosas";
+  info: {
+    singularName: "minimalnye-parmetry-perenosa";
+    pluralName: "minimalnye-parmetry-perenosas";
+    displayName: "\u041C\u0438\u043D\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0435 \u043F\u0430\u0440\u043C\u0435\u0442\u0440\u044B \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u0430";
+    description: "";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    minimalCount: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<50>;
+    price: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<1500>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::minimalnye-parmetry-perenosa.minimalnye-parmetry-perenosa",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::minimalnye-parmetry-perenosa.minimalnye-parmetry-perenosa",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNdsNds extends Schema.SingleType {
   collectionName: "ndss";
   info: {
@@ -1018,6 +1052,7 @@ declare module "@strapi/types" {
       "api::czena-metra-pogonnogo.czena-metra-pogonnogo": ApiCzenaMetraPogonnogoCzenaMetraPogonnogo;
       "api::history.history": ApiHistoryHistory;
       "api::meters-increase.meters-increase": ApiMetersIncreaseMetersIncrease;
+      "api::minimalnye-parmetry-perenosa.minimalnye-parmetry-perenosa": ApiMinimalnyeParmetryPerenosaMinimalnyeParmetryPerenosa;
       "api::nds.nds": ApiNdsNds;
       "api::stoimost-perenosa-izobrazheniya.stoimost-perenosa-izobrazheniya": ApiStoimostPerenosaIzobrazheniyaStoimostPerenosaIzobrazheniya;
     }

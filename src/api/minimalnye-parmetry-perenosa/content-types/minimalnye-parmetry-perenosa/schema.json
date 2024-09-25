@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "minimalnye_parmetry_perenosas",
+  "info": {
+    "singularName": "minimalnye-parmetry-perenosa",
+    "pluralName": "minimalnye-parmetry-perenosas",
+    "displayName": "Минимальные парметры переноса",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "minimalCount": {
+      "type": "integer",
+      "required": true,
+      "default": 50
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "default": 1500
+    }
+  }
+}
